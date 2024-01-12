@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countreis</title>
+    <link rel="stylesheet" href="reset.css" type="text/css"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+    <!---CONTAINER--->
+    <div id="container">
+
+        <!---HEADER--->
+        <header>
+            <div id="logo">
+                <img src="Images/logo.jpg" alt="the World"/>
+                <span id="title">The World</span>
+                <span id="slogan">A Web of Wonders Awaits Your Click!</span>
+            </div>
+            <div id="search">
+                <form action="#" method="post">
+                    <input type="text" id="SF" placeholder="Search..." name="searchField"/>
+                    <input type="button" id="btn-search" name="search" value="Search">
+                </form>
+            </div>
+        </header>
+
+        <!---NAVIGATOR--->
+        <nav>
+            <ul class="menu">
+                <li class="item" style="margin-left: 0px;"><a href="#" class="item-link">Home</a></li>
+                <li class="item"><a href="#" class="item-link">About</a></li>
+                <li class="item"><a href="#" class="item-link">countreis</a></li>
+                <li class="item"><a href="#" class="item-link">Contacts</a></li>
+                <li class="item"><a href="#" class="item-link">FAQs</a></li>
+            </ul>
+        </nav>
+
+        <!---ASIDE--->
+        <aside>
+            <div id="maps">
+                <h3>View Maps</h3>
+                <ul>
+                    <li><a href="https://goo.gl/maps/5LYujdfR5yLUXoERA" target="_blank">Google Map</a></li>
+                    <li><a href="https://www.openstreetmap.org/relation/307573" target="_blank">Open Stream Map</a></li>
+                </ul>
+            </div>
+            <div id="flag">
+                <h3>Flag</h3>
+                <img id="aside_img" src="https://flagcdn.com/w320/pk.png" alt="paksitan flag">
+            </div>
+        </aside>
+
+
+        <!-- Search Field -->
+        <div id="countrySearch">
+            <form action="#" method="post">
+                <input type="text" id="searchField" placeholder="Search For a Country..." name="searchField"/>
+                <input type="button" id="btn-search" name="search" value="Search" onclick="LoadData()">
+            </form>
+        </div>
+
+
+        <!---BODY--->
+        <div id="country_info">
+            <span id="pak">Pakistan</span>
+            <div id="flag1">
+                <img id="flag_img" src="https://flagcdn.com/w320/pk.png" alt="country flag">
+            </div>
+            <div id="table">
+                <table border=1>
+                    <tbody>
+                        <tr>
+                            <td>Official Name</td>
+                            <td id="name">Islamic Republic of Paksitan</td>     
+                        </tr>
+                        <tr>
+                            <td>Capital</td>
+                            <td id="capital">Islamabad</td>     
+                        </tr>
+                        <tr>
+                            <td>Region</td>
+                            <td id="region">Asia</td>     
+                        </tr>
+                        <tr>
+                            <td>Population</td>
+                            <td id="population">20000000</td>     
+                        </tr>
+                        <tr>
+                            <td>Languages</td>
+                            <td id="language">English, Urdu</td>     
+                        </tr>
+                        <tr>
+                            <td>Area</td>
+                            <td id="area">881912.0</td>     
+                        </tr>
+                        <tr>
+                            <td>Continents</td>
+                            <td id="continents">Asia</td>     
+                        </tr>
+                        <tr>
+                            <td>Start of Weak</td>
+                            <td id="weak">Monday</td>     
+                        </tr>
+                        <tr>
+                            <td>Currencies</td>
+                            <td id="curr">Pakistani rupee, ₨</td>     
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!---FOOTER--->
+        <footer>
+            <p>&copy; &nbsp;Copywrite Mr.SoftWare</p>
+        </footer>
+    </div>
+
+
+
+    <script>
+        const LoadData = () => {
+            const searchText = document.getElementById("searchField").value.toLowerCase();
+            console.log(searchText);
+
+            fetch("https://restcountries.com/v3.1/all")
+            .then(response => response.json())
+            .then(countries => {
+                let country = countries.filter(country => country.name.common.toLowerCase() === searchText);
+                
+                // Check if the country is found
+                if (country.length > 0) {
+                    document.getElementById("pak").innerHTML = country[0].name.common;
+                    document.getElementById("flag_img").src = country[0].flags.png;
+                    document.getElementById("aside_img").src = country[0].flags.png;
+                    document.getElementById("name").innerHTML = country[0].name.official;
+                    document.getElementById("capital").innerHTML = country[0].capital;
+                    document.getElementById("region").innerHTML = country[0].region;
+                    document.getElementById("population").innerHTML = country[0].population;
+                    document.getElementById("language").innerHTML = JSON.stringify(country[0].languages);
+                    document.getElementById("area").innerHTML = country[0].area;
+                    document.getElementById("continents").innerHTML = country[0].continents;
+                    document.getElementById("weak").innerHTML = country[0].startOfWeek;
+                    document.getElementById("curr").innerHTML = JSON.stringify(country[0].currencies);
+                } else {
+                    console.error('Country not found');
+                }
+                document.getElementById("searchField").value = ""; 
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        }
+    </script>
+</body>
+</html>

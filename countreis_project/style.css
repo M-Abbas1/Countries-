@@ -1,0 +1,270 @@
+/* 
+    PRIMARY COLOR: rgb(0, 0, 125);
+    SECONDARY COLOR: rgb(192, 4, 125);
+    TEXT COLOR:
+    HEADING SIZE:
+    FONT SIZE:
+*/
+
+div#container
+{
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+header
+{
+    width: 100%;
+    height: 70px;
+}
+header img
+{
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+header span#title
+{
+    font-weight: bold;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    float: left;
+    padding-top: 20px;
+    padding-left: 5px;
+}
+header span#slogan
+{
+    clear: left; 
+    float: left;
+    padding-left: 110px;
+    margin-top: -35px;
+}
+header div#search
+{
+    float: right;
+    margin-top: -20px;
+    padding-right: 20px;
+}
+header div#search input#searchField
+{
+    width: 130px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+header div#search input#searchField:focus
+{
+    border: 2px solid red;
+}
+header div#search input#btn-search
+{
+    border-radius: 15px;
+    color: black;
+}
+header div#search input#btn-search:hover
+{
+    background-color: rgb(0, 0, 125);
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigator */
+nav 
+{
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+}
+nav ul
+{
+    list-style-type: none;  
+    text-align: center;
+}
+nav ul li
+{
+    display: inline-block;
+    margin-left: 6%;
+}
+nav ul li a
+{
+    font-size: large;
+    font-weight: bold;
+    display: inline-block;
+    color: rgb(0, 0, 125);
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    text-decoration: none;
+}
+nav ul li a:hover
+{
+    text-decoration: underline;
+    color: rgb(3, 164, 218);;
+}
+
+/* aside */
+aside
+{
+    margin-top: 50px;
+    width: 20%;
+    height: 350px;
+    float: left;
+}
+aside div#maps h3
+{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+aside ul
+{
+    list-style-type: none;
+}
+aside ul li
+{
+    padding-top: 10px;
+    text-align: center;
+}
+aside ul li a
+{
+    padding-top: 5px;
+    display: inline-block;
+    width: 55%;
+    height: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 0, 80);
+    border-radius: 10px;
+}
+aside ul li a:hover
+{
+    box-shadow: 0 0 10px rgb(3, 164, 218);;
+}
+aside div#flag
+{
+    margin-top: 100px;
+}
+aside div#flag h3
+{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+aside div#flag img
+{
+    padding-left: 30px;
+    padding-top: 10px;
+    width: 70%;
+    height: 100px;
+}
+
+
+div#countrySearch
+{
+    display: inline-block;
+    width: 70%;
+    margin-top: 25px;
+}
+div#countrySearch form 
+{
+    width: 50%;
+    color: #555;
+    display: flex;
+    padding: 2px;
+    border: 1px solid currentColor;
+    border-radius: 15px;
+    margin-left: 15%;
+}
+div#countrySearch input#searchField
+{
+    width: 90%;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+div#countrySearch input#searchField::placeholder 
+{
+    color: #bbb;
+}
+div#countrySearch input#btn-search 
+{
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+}
+div#countrySearch input#btn-search:hover 
+{
+    opacity: 10;
+}
+div#countrySearch input#btn-search:focus
+{
+    outline: 2px solid rgb(232, 232, 236);
+}
+  
+
+
+div#country_info
+{
+    display: inline-block;
+    width: 70%;
+    margin-top: 30px;
+}
+span#pak
+{
+    font-weight: bold;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    padding-left: 30%;
+    padding-top: -40px;
+}
+div#flag1
+{
+    display: inline-block;
+    margin-left: 50px;
+}
+div#flag1 img
+{
+    width: 100px;
+    height: 50px;
+    padding-top: 30px;
+}
+div#table table
+{
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+td 
+{
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+
+
+/* Footer */
+footer
+{
+    clear: both;
+    margin-top: 400px;
+}
+footer p
+{
+    text-align: center;
+}
